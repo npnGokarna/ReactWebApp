@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Radium, {StyleRoot} from 'radium';
 
 import './App.css';
 import Person from './Person/Person';
@@ -58,11 +57,7 @@ class App extends Component {
             backgroundColor: 'green',
             color: 'white',
             border: '3px',
-            padding: '8px',
-            ':hover': {
-                backgroundColor: 'darkgreen',
-                color: 'white'
-            }
+            padding: '8px'
         };
 
         const cssClasses = [];
@@ -86,14 +81,9 @@ class App extends Component {
                     nameChange = {(event)=>this.changeNameHandler(event, person.id)}/>
                 )
                 buttonStyle.backgroundColor = 'red';
-                buttonStyle[':hover'] =  {
-                    backgroundColor: 'darkred',
-                    color: 'white'
-                };
         }
 
         return (
-            <StyleRoot>
                 <div className = "App">
                 <p className = {cssClasses.join(' ')}>
                     Hello there!!
@@ -101,7 +91,6 @@ class App extends Component {
                 <button className="btn" style = {buttonStyle} onClick = {this.toggleNameHandler} >Toggle Persons</button>
                 {pers}
                 </div>
-            </StyleRoot>
         );
     }
 
